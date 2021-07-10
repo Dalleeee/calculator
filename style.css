@@ -1,0 +1,56 @@
+#container {
+    height: 400px;
+    width: 300px;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: lightpink;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+#screen {
+    background-color: snow;
+    height: 80px;
+    position: relative;
+    top: -15px;
+    font-size: 45px;
+    text-align: center;
+    line-height: 75px;
+}
+
+#grid {
+    width: 300px;
+    position: relative;
+    top: -35px;
+    left: 16px;
+}
+button {
+    height: 55px;
+    width: 60px;
+    border-width: 1px;
+    font-size: 17px;
+    margin: 2px;
+    margin-top: 5px;
+    border-radius: 6px;
+}
+
+button:hover {
+    cursor: pointer;
+    border: 2px solid thistle;
+}
+
+button:active {
+    border: 2px solid gold;
+}
+
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #clear, #equalID {
+    background-color: rgb(195, 231, 255);
+}
+
+#addID, #subtractID, #multiplyID, #divideID {
+    background-color: rgb(255, 232, 211);
+}
