@@ -72,44 +72,52 @@ zero.addEventListener("click", function() {
 
 // sets operator for operate() when clicked, sets "a" value with on screen content, and resets screen content
 const addition = document.getElementById("addID");
-addition.addEventListener("click", function() {
+addition.addEventListener("click", adding);
+
+function adding() {
     if (operator != undefined) {
         result();
     }
     a = Number(screen.textContent);
     operator = "adding";
     resetScreen();
-});
+}
 
 const subtraction = document.getElementById("subtractID");
-subtraction.addEventListener("click", function() {
+subtraction.addEventListener("click", subtracting);
+
+function subtracting() {
     if (operator != undefined) {
         result();
     }
     a = Number(screen.textContent);
     operator = "subtracting";
     resetScreen();
-});
+}
 
 const multiplication = document.getElementById("multiplyID");
-multiplication.addEventListener("click", function(){
+multiplication.addEventListener("click", multiplying);
+
+function multiplying(){
     if (operator != undefined) {
         result();
     }
     a = Number(screen.textContent);
     operator = "multiplying";
     resetScreen();
-});
+}
 
 const division = document.getElementById("divideID");
-division.addEventListener("click", function(){
+division.addEventListener("click", dividing);
+
+function dividing(){
     if (operator != undefined) {
         result();
     }
     a = Number(screen.textContent);
     operator = "dividing";
     resetScreen();
-});
+}
 
 const equal = document.getElementById("equalID");
 equal.addEventListener("click", result); // Runs the process when equal button is clicked
@@ -154,3 +162,42 @@ function clearHistory() {
     screen.textContent = "";
     isEqualsClicked = false;
 }
+
+// Key down, run function;
+window.addEventListener("keydown", function(e) {
+    switch (e.which){
+        case 49: screen.textContent += "1";
+        break;
+        case 50: screen.textContent += "2";
+        break;
+        case 51: screen.textContent += "3";
+        break;
+        case 52: screen.textContent += "4";
+        break;
+        case 53: screen.textContent += "5";
+        break;
+        case 54: screen.textContent += "6";
+        break;
+        case 55: screen.textContent += "7";
+        break;
+        case 56: screen.textContent += "8";
+        break;
+        case 57: screen.textContent += "9";
+        break;
+        case 48: screen.textContent += "0";
+        break;
+        case 187: adding();
+        break;
+        case 189: subtracting();
+        break;
+        case 191: dividing();
+        break;
+        case 88: multiplying();
+        break;
+        case 67: clearHistory();
+        break;
+    }
+    if (e.which === 13) {
+        result();
+    }
+})
